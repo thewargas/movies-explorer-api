@@ -67,7 +67,8 @@ const changeUserInfo = (req, res, next) => {
   User.findOne({ email: mail })
     .then(() => {
       throw new ConflictError('Пoльзователь уже с таким email уже зарегистрирован');
-    });
+    })
+    .catch(next);
   User.findByIdAndUpdate(_id, { name, mail }, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
