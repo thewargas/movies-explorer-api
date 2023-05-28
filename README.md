@@ -21,4 +21,6 @@
 
 ## Ссылки
 
+https://api.movies-thewargas.nomoredomains.rocks - backend
+
 https://github.com/thewargas/movies-explorer-api - репозиторий GH
