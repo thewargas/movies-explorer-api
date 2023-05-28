@@ -63,11 +63,11 @@ const getUser = (req, res, next) => {
 
 const changeUserInfo = (req, res, next) => {
   const { _id } = req.user;
-  const { name, mail } = req.body;
-  User.findOne({ email: mail })
+  const { name, email } = req.body;
+  User.findOne({ email: `${email}` })
     .then((userWithMail) => {
       if (!userWithMail) {
-        User.findByIdAndUpdate(_id, { name, mail }, { new: true, runValidators: true })
+        User.findByIdAndUpdate(_id, { name, email }, { new: true, runValidators: true })
           .then((user) => {
             if (!user) {
               throw new NotFoundError('По данному _id информация не найдена');
