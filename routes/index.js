@@ -27,7 +27,7 @@ router.post('/signup', celebrate({
 router.use(auth);
 
 router.use('/users', usersRouter);
-router.use('/cards', moviesRouter);
+router.use('/movies', moviesRouter);
 
 router.use((req, res, next) => {
   next(new NotFoundError('Неправильный адрес'));

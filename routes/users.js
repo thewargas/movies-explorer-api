@@ -14,5 +14,4 @@ userRouter.patch('/me', celebrate({
   }),
 }), changeUserInfo);
 
-
 module.exports = userRouter;

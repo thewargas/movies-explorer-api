@@ -6,7 +6,8 @@ const { CREATE_CODE } = require('../utils/constants');
 
 const createMovie = (req, res, next) => {
   const { _id } = req.user;
-  const { country,
+  const {
+    country,
     director,
     duration,
     year,
@@ -18,7 +19,8 @@ const createMovie = (req, res, next) => {
     nameRU,
     nameEN,
   } = req.body;
-  Movie.create({ country,
+  Movie.create({
+    country,
     director,
     duration,
     year,

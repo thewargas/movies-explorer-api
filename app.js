@@ -8,10 +8,13 @@ const selectErrors = require('./middlewares/errors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const enableCors = require('./middlewares/cors');
 
-const { PORT = 3000 } = process.env;
+const {
+  PORT = 3000,
+  DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb',
+} = process.env;
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
+mongoose.connect(DB_URL);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
