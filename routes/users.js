@@ -1,5 +1,7 @@
 const userRouter = require('express').Router();
-const changeUserInfoValidation = require('../middlewares/routesValidation');
+const {
+  changeUserInfoValidation,
+} = require('../middlewares/routesValidation');
 const {
   changeUserInfo,
   getUser,

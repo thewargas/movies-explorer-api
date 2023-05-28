@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const usersRouter = require('./users');
+const moviesRouter = require('./movies');
 const {
   loginValidation,
   registerValidation,
 } = require('../middlewares/routesValidation');
-const moviesRouter = require('./movies');
 const auth = require('../middlewares/auth');
 const NotFoundError = require('../errors/not-found-error');
 const {
