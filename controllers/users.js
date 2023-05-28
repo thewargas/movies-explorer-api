@@ -65,16 +65,19 @@ const changeUserInfo = (req, res, next) => {
   const { _id } = req.user;
   const { name, mail } = req.body;
   User.findOne({ email: mail })
-    .then(() => {
-      throw new ConflictError('Пoльзователь уже с таким email уже зарегистрирован');
-    })
-    .catch(next);
-  User.findByIdAndUpdate(_id, { name, mail }, { new: true, runValidators: true })
-    .then((user) => {
-      if (!user) {
-        throw new NotFoundError('По данному _id информация не найдена');
+    .then((userWithMail) => {
+      if (!userWithMail) {
+        User.findByIdAndUpdate(_id, { name, mail }, { new: true, runValidators: true })
+          .then((user) => {
+            if (!user) {
+              throw new NotFoundError('По данному _id информация не найдена');
+            }
+            res.send(user);
+          })
+          .catch(next);
+      } else {
+        throw new ConflictError('Пoльзователь с таким email уже зарегистрирован');
       }
-      res.send(user);
     })
     .catch(next);
 };
