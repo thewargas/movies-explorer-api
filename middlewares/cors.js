@@ -1,8 +1,8 @@
 const allowedCors = [
-  'https://thewargas.nomoredomains.monster',
-  'http://thewargas.nomoredomains.monster',
-  'https://api.thewargas.nomoredomains.monster',
-  'http://api.thewargas.nomoredomains.monster',
+  'https://thewargas.nomoreparties.co',
+  'http://thewargas.nomoreparties.co',
+  'https://api.movies-thewargas.nomoredomains.rocks',
+  'http://api.movies-thewargas.nomoredomains.rocks',
   'http://localhost:3000',
   'http://localhost:3001',
   'http://localhost:3000',
